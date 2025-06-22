@@ -15,6 +15,11 @@ def main():
 
 def get_name_from_email(email):
     "Extract the name from the email"
-
+    prefix = email.split('@')[0]
+    parts = prefix.split('.')
+    name = " ".join(parts).title()
+    return name
 
 main()
+
+#o.5hour
