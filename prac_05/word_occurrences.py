@@ -11,3 +11,4 @@ max_word_length = max(len(word) for word in word_counts) if word_counts else 0
 # Print sorted results with aligned columns
 for word in sorted(word_counts):
     print(f"{word:{max_word_length}} : {word_counts[word]}")
+#1hour
