@@ -1,3 +1,4 @@
+# guitar.py
 class Guitar:
     def __init__(self, name="", year=0, cost=0):
         """Initialise a Guitar."""
@@ -9,3 +10,7 @@ class Guitar:
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
     def get_age(self):
+        return
+    def is_vintage():
+        return
+
