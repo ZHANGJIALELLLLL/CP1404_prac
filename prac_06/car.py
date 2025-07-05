@@ -1,6 +1,5 @@
 """CP1404/CP5632 Practical - Car class example."""
 
-# car.py
 class Car:
     """Represent a Car object."""
 
