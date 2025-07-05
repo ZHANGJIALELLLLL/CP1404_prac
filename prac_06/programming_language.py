@@ -1,3 +1,4 @@
+# prac_06.programming_language.py
 class ProgrammingLanguage:
 
     def __init__(self, name,typing, reflection, year):
@@ -7,13 +8,9 @@ class ProgrammingLanguage:
         self.year = year
 
     def __str__(self):
-        return
+        return (f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, "
+                f"First appeared in {self.year}")
+
     def is_dynamic(self):
-        return
-def run_test():
-    python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
-    ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
-    visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
+        return self.typing.lower() == "dynamic"
 
-
-    print(python)
