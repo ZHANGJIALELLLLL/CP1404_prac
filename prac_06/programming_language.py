@@ -8,8 +8,8 @@ class ProgrammingLanguage:
 
     def __str__(self):
         return
-    def is_dynamic():
-
+    def is_dynamic(self):
+        return
 def run_test():
     python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
     ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
