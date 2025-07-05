@@ -1,4 +1,4 @@
-# prac_06.programming_language.py
+
 class ProgrammingLanguage:
 
     def __init__(self, name,typing, reflection, year):
