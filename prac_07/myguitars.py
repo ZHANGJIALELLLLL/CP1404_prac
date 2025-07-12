@@ -18,6 +18,16 @@ def main():
 
 def load_guitars():
     """Load data from csv"""
+    guitars = []
+    try:
+        with open('guitars.csv', 'r') as in_file:
+            reader = csv.reader(in_file)
+            for row in reader:
+                name, year, cost = row
+                guitars.append(Guitar(name, int(year), float(cost))
+    except FileNotFoundError:
+        print("No existing guitar file found. Starting with empty list.")
+    return guitars
 
 def add_new_guitars(guitars):
     """Add a new guitar based on user input"""
