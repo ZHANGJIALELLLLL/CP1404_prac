@@ -1,3 +1,4 @@
+import datetime
 from prac_07.project import Project
 def main():
     print("Welcome to Pythonic Project Management")
@@ -80,6 +81,14 @@ def display_projects(projects):
 
 def filter_projects_by_date(projects):
     """Filter and display projects that start after a specified date"""
+    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    try:
+        filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+        filtered_projects = [p for p in projects if p.start_date > filter_date]
+        for project in sorted(filtered_projects, key=attrgetter('start_date')):
+            print(project)
+    except ValueError:
+        print("Invalid date format. Please use dd/mm/yyyy")
 
 def add_new_project(projects):
     """Add a new project from user input"""
@@ -95,6 +104,23 @@ def add_new_project(projects):
 
 def update_project(projects):
     """Update"""
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+
+    try:
+        choice = int(input("Project choice: "))
+        project = projects[choice]
+        print(project)
+
+        new_percentage = input("New Percentage: ")
+        if new_percentage:
+            project.completion_percentage = int(new_percentage)
+
+        new_priority = input("New Priority: ")
+        if new_priority:
+            project.priority = int(new_priority)
+    except (ValueError, IndexError):
+        print("Invalid project selection")
 
 
 main()
