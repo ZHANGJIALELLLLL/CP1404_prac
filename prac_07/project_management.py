@@ -43,9 +43,27 @@ def display_menu():
 
 def load_projects(filename):
     """Load projects from file."""
+    projects = []
+    try:
+        with open(filename, 'r') as in_file:
+            in_file.readline()
+            for line in in_file:
+                parts = line.strip().split('\t')
+                project = Project(parts[0], parts[1], parts[2], parts[3], parts[4])
+                projects.append(project)
+    except FileNotFoundError:
+        print(f"File {filename} not found")
+    return projects
+
 
 def save_projects(filename, projects):
     """Save projects to file"""
+    with open(filename, 'w') as out_file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
+        for project in projects:
+            print(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t"
+                  f"{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
+
 
 def display_projects(projects):
     """display projects"""
