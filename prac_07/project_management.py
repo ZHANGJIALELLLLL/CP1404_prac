@@ -49,6 +49,16 @@ def save_projects(filename, projects):
 
 def display_projects(projects):
     """display projects"""
+    incomplete_projects = [p for p in projects if not p.is_complete()]
+    complete_projects = [p for p in projects if p.is_complete()]
+
+    print("Incomplete projects:")
+    for project in sorted(incomplete_projects):
+        print(f"  {project}")
+
+    print("Completed projects:")
+    for project in sorted(complete_projects):
+        print(f"  {project}")
 
 def filter_projects_by_date(projects):
     """Filter and display projects that start after a specified date"""
