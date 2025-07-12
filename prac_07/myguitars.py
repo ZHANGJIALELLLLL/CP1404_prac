@@ -29,6 +29,7 @@ def load_guitars():
         print("No existing guitar file found. Starting with empty list.")
     return guitars
 
+
 def add_new_guitars(guitars):
     """Add a new guitar based on user input"""
 
