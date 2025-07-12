@@ -15,7 +15,6 @@ def main():
     save_guitars(guitars)
     print("Guitars saved to file.")
 
-
 def load_guitars():
     """Load data from csv"""
     guitars = []
@@ -44,6 +43,10 @@ def add_new_guitars(guitars):
 
 def save_guitars(guitars):
     """save"""
+    with open('guitars.csv', 'w', newline='') as out_file:
+        writer = csv.writer(out_file)
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
 
 main()
 
