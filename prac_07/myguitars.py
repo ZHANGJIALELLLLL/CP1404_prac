@@ -32,6 +32,15 @@ def load_guitars():
 
 def add_new_guitars(guitars):
     """Add a new guitar based on user input"""
+    print("\nAdd new guitars:")
+    while True:
+        name = input("Name: ")
+        if not name:
+            break
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitars.append(Guitar(name, year, cost))
+        print(f"{name} added.\n")
 
 def save_guitars(guitars):
     """save"""
