@@ -1,4 +1,27 @@
 BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+    Label:
+        text: 'Team Members'
+        font_size: '32sp'
+        size_hint_y: None
+        height: 60
+        bold: True
+
     BoxLayout:
         orientation: 'vertical'
-        id: main
+        # this layout is populated with Button widgets in app code
+        id: entries_box
+    Label:
+        size_hint_y: 0.1
+        text: app.status_text
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.2
+        Button:
+            text: "Create Widgets"
+            on_press: app.create_widgets()
+        Button:
+            text: "Clear Widgets"
+            on_press: app.clear_all()
