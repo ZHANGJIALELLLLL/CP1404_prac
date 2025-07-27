@@ -10,6 +10,9 @@ def main():
         print(f"{good_car.name:12} drove {good_car.drive(i):2}km")
         print(f"{bad_car.name:12} drove {bad_car.drive(i):2}km")
         print("-" * 25)
+        print("Final state of the cars:")
+        print(good_car)
+        print(bad_car)
 
 
 main()
