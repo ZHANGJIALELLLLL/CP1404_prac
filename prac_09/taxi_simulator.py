@@ -54,6 +54,24 @@ def run_tests():
     print("fuel =", bus.fuel)
     print("odo = ", bus._odometer)
     print(bus)
+    distance = int(input("Drive how far? "))
+    while distance > 0:
+        distance_travelled = bus.drive(distance)
+        print(f"{bus} travelled {distance_travelled}")
+        distance = int(input("Drive how far? "))
+
+    t = Taxi("Prius 1", 100)
+    print(t)
+    t.drive(25)
+    print(t, t.get_fare())
+    t.start_fare()
+    t.drive(40)
+    print(t, t.get_fare())
+
+    sst = SilverServiceTaxi("Limo", 100, 2)
+    print(sst, sst.get_fare())
+    sst.drive(10)
+    print(sst, sst.get_fare())
 
 
 main()
