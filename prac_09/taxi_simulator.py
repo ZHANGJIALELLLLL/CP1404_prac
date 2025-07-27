@@ -46,5 +46,14 @@ def display_taxis(taxis):
 
 
 def run_tests():
+    bus = Car("Datsun", 180)
+    bus.drive(30)
+    print("fuel =", bus.fuel)
+    print("odo =", bus._odometer)
+    bus.drive(55)
+    print("fuel =", bus.fuel)
+    print("odo = ", bus._odometer)
+    print(bus)
+
 
 main()
