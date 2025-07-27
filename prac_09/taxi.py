@@ -7,6 +7,7 @@ from prac_09.car import Car
 
 class Taxi(Car):
     """Specialised version of a Car that includes fare costs."""
+
     price_per_km = 1.23
 
     def __init__(self, name, fuel):
@@ -20,8 +21,9 @@ class Taxi(Car):
 
     def get_fare(self):
         """Return the price for the taxi trip."""
-        # Note: self.price_per_km will use the class variable
-        return self.price_per_km * self.current_fare_distance
+        # round fare result to nearest 10c
+        fare = round(self.price_per_km * self.current_fare_distance, 1)
+        return fare
 
     def start_fare(self):
         """Begin a new fare."""
