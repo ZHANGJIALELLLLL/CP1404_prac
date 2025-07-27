@@ -2,3 +2,11 @@ from prac_09.taxi import Taxi
 
 
 def main():
+    """Test the Taxi class."""
+    # create a new taxi object
+    my_taxi = Taxi("Prius 1", 100)
+    my_taxi.drive(40)#40km
+    print(my_taxi)
+    print(f"Current fare: ${my_taxi.get_fare():.2f}")
+
+
