@@ -57,7 +57,8 @@ def run_tests():
 
     default_car = Car()
     assert default_car.fuel == 0,"Car does not set default fuel correctly"
-
+    fueled_car = Car(fuel=10)
+    assert fueled_car.fuel == 10, "Car does not set passed fuel correctly"
 
 
     # TODO: 2. write assert statements to show if Car sets the fuel correctly
@@ -68,6 +69,7 @@ def run_tests():
 
 
 run_tests()
+doctest.testmod()
 
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
