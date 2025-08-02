@@ -24,20 +24,7 @@ def is_long_word(word, length=5):
     """
     return len(word) > length
 
-def format_sentence(phrase):
-    """
-    Format a phrase as a sentence starting with capital and ending with single full stop.
-    >>> format_sentence('hello')
-    'Hello.'
-    >>> format_sentence('It is an ex parrot.')
-    'It is an ex parrot.'
-    >>> format_sentence('this needs formatting')
-    'This needs formatting.'
-    """
-    sentence = phrase.capitalize()
-    if not sentence.endswith('.'):
-        sentence += '.'
-    return sentence
+
 
 def run_tests():
     """Run the tests on the functions."""
@@ -55,10 +42,6 @@ def run_tests():
     car = Car()
     assert car._odometer == 0, "Car does not set odometer correctly"
 
-    default_car = Car()
-    assert default_car.fuel == 0,"Car does not set default fuel correctly"
-    fueled_car = Car(fuel=10)
-    assert fueled_car.fuel == 10, "Car does not set passed fuel correctly"
 
 
     # TODO: 2. write assert statements to show if Car sets the fuel correctly
@@ -66,6 +49,10 @@ def run_tests():
     # using the value passed in or the default
     # You should test both of these
     car = Car(fuel=10)
+    assert car.fuel == 10
+
+    car = Car()
+    assert car.fuel == 0
 
 
 run_tests()
